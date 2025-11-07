@@ -14,7 +14,7 @@ const app = express();
 // Middleware - FIXED CORS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://vercel-b-ten.vercel.app']      // ✅ Frontend URL in production
+    ? ['https://vercel-f-blue.vercel.app']      // ✅ Frontend URL in production
     : ['http://localhost:5173'],                // ✅ Localhost in development
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
