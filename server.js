@@ -16,7 +16,10 @@ app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? ['https://vercel-f-blue.vercel.app'] 
     : ['http://localhost:5173'],
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  exposedHeaders: ['Content-Range', 'X-Content-Range']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/jobs', require('./routes/jobs'));
 app.use('/api/applications', require('./routes/applications'));
+
 
 // Root route
 app.get('/', (req, res) => {
