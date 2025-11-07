@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
+  origin: process.env.NODE_ENV === 'development' 
     ? ['https://vercel-b-ten.vercel.app'] 
     : ['http://localhost:5173'],
   credentials: true,
